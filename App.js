@@ -12,7 +12,7 @@ const operations = [
   { label: "Suma", value: "sum" },
   { label: "Resta", value: "subtraction" },
   { label: "Multiplicación", value: "multiplication" },
-  { label: "Residuo", value: "residue" },
+  { label: "División", value: "division" },
 ];
 
 export default function App() {
@@ -39,16 +39,17 @@ export default function App() {
 
       switch (operation) {
         case "sum":
-          result = num1 + num2;
+          result = `${num1 + num2}`;
           break;
         case "subtraction":
-          result = num1 - num2;
+          result = `${num1 - num2}`;
           break;
         case "multiplication":
-          result = num1 * num2;
+          result = `${num1 * num2}`;
           break;
-        case "residue":
-          result = num1 % num2;
+        case "division":
+          if (num2 === 0) Alert.alert("No existe división para 0");
+          else result = `${num1 / num2}`;
           break;
 
         default:
